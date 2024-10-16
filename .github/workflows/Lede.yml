@@ -94,8 +94,7 @@ on:
 #   - cron: 35 18 * * *
 
 env:
-  #GITHUB_LINK: https://github.com/${{github.repository}}
-  GITHUB_LINK: https://github.com/498110811/Cyber-3588-AIB
+  GITHUB_LINK: https://github.com/${{github.repository}}
   GIT_ACTOR: ${{github.actor}}
   GIT_REPOSITORY: ${{github.repository}}
   RUN_NUMBER: ${{github.run_number}}
@@ -165,7 +164,8 @@ jobs:
     - name: 下载"${{ matrix.target }}-${{ github.event.inputs.REPO_BRANCH }}"源码
       working-directory: /${{ env.DIY_WORK }}
       run: |
-        git clone -b "${REPO_BRANCH}" --single-branch "${REPO_URL}" openwrt
+        #git clone -b "${REPO_BRANCH}" --single-branch "${REPO_URL}" openwrt
+        git clone -b "${REPO_BRANCH}" --single-branch "https://github.com/498110811/Cyber-3588-AIB" openwrt
         ln -sf /${{ env.DIY_WORK }}/openwrt ${GITHUB_WORKSPACE}/openwrt
         cp -Rf ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/openwrt/build
         chmod -R +x ${GITHUB_WORKSPACE}/openwrt/build
