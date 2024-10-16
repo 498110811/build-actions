@@ -37,6 +37,7 @@ on:
           - 'xiaomi_redmi-router-ac2100'
           - 'xiaomi_redmi-router-ax6s'
           - 'xiaoyu_xy-c5'
+          -'rk3588-aib'
       CPU_SELECTION:
         description: 'CPU优选,增加编译速度'
         required: true
@@ -93,7 +94,8 @@ on:
 #   - cron: 35 18 * * *
 
 env:
-  GITHUB_LINK: https://github.com/${{github.repository}}
+  #GITHUB_LINK: https://github.com/${{github.repository}}
+  GITHUB_LINK: https://github.com/498110811/Cyber-3588-AIB
   GIT_ACTOR: ${{github.actor}}
   GIT_REPOSITORY: ${{github.repository}}
   RUN_NUMBER: ${{github.run_number}}
